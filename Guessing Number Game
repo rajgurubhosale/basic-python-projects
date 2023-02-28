@@ -1,0 +1,78 @@
+import random 
+
+def instructions():
+  print()
+  print("READ GAME INSTRUCTIONS")
+  print("Welcome to the guessing number game! ")
+  print("let's see if you can crack the code and guess the correct number. Good luck!")
+  print("GAMES RULES ARE :")
+  print("You will have 5 attempts to guess the right number,so choose wisely. ")
+  print("if the 'hint' is WARM!! it means  your number is SMALLER than SECRET NUMBER" )
+  print("if the 'hint' is COLD!! it means  your number is GRETAER than SECRET NUMBER" )
+  print(" is 'WARMER' means that your guessed number is more close small number to secret number")
+  print("COLDER means (vice versa)")
+
+  print("GAME START")
+  print("")
+
+
+def startGame():
+  secretNumber= random.randint(1,101) #genrate a random secret Number
+  for playerMove in range(5):
+    playerMove=int(input("enter your guess: "))
+    print(playerMove)
+    if playerMove > 100 or playerMove < 1:
+      print("you entered a OUT OF BONDS")
+      print('enter a number between 1 to 100')
+    if playerMove < secretNumber and  playerMove >(secretNumber-5) :
+      print("WARMER!!")
+    elif playerMove < secretNumber and  playerMove >(secretNumber-10) :
+        print("WARM!!")
+    if playerMove > secretNumber and  playerMove < (secretNumber+5) :
+      print("COLDER!!")
+    elif playerMove > secretNumber and  playerMove < (secretNumber+10) :
+      print("COLD!!")
+    if playerMove == secretNumber :
+      print("Congratulations, you won the game! Your guessing skills are osm")
+      break
+  if playerMove!=secretNumber:
+    print("secret Number was :",str(secretNumber),"!")
+    print("You Lost!Good luck next time!")
+
+def playAgain():
+    print("")
+    print("enter Y to play again ")
+    print("enter x to stop the game")
+    choice = input( "enter 'y' or 'x' ")
+    if choice == 'y':
+      print("| ")
+      print("welcome to the game again")
+      Game()
+    if choice == 'x':
+      print("user dont want to play again stop the game!")
+
+def Game():
+  instructions()
+  startGame()
+  playAgain()
+
+
+
+
+
+def main():
+  print("enter Y to start the game ")
+  print("enter x to stop the game")
+  choice = input( "enter 'y' or 'x' ")
+  if choice == 'y':
+    Game()
+  if choice=='x':
+    print("user dont want to play game")
+  if choice != 'x' or 'y':
+    print("user entered wrong options")
+    print(" ")
+    main()
+    
+  
+
+main()
