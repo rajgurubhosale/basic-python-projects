@@ -1,0 +1,59 @@
+#dice simulator 
+import random 
+
+def rollDice():
+  randomDice =random.randint(1,6)
+
+  if randomDice ==1:
+    print("|--------|")
+    print("|        |")
+    print("|   0    |")
+    print("|        |")
+    print("|--------|")
+
+  if randomDice ==2:
+    print("|--------|")
+    print("|        |")
+    print("| 0    0 |")
+    print("|        |")
+    print("|--------|")
+
+
+  if randomDice ==3:
+    print("|--------|")
+    print("| 0      |")
+    print("|   0    |")
+    print("|     0  |")
+    print("|--------|")
+
+  if randomDice ==4:
+    print("|--------|")
+    print("|  0   0 |")
+    print("|        |")
+    print("|  0   0 |")
+    print("|--------|")
+
+
+  if randomDice ==5:
+    print("|--------|")
+    print("| 0    0 |")
+    print("|    0   |")
+    print("| 0    0 |")
+    print("|--------|")
+
+  if randomDice ==6:
+    print("|--------|")
+    print("| 0    0 |")
+    print("| 0    0 |")
+    print("| 0    0 |")
+    print("|--------|")
+
+while True:
+  dice=str(input(" PRESS enter key to roll random dice OR n key to stop:"))
+  if dice=='':
+    rollDice()
+  if dice=='n':
+    print("dice stopped rolling")
+    break
+
+  
