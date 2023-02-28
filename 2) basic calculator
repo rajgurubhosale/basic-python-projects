@@ -1,0 +1,23 @@
+ while True:
+    try :
+        a=int(input("enter first number"))
+        b=int(input("enter second number"))
+        print("")
+        break
+    except ValueError: 
+        print("enter a integers ")
+        print("")
+
+        
+
+        
+print("enter which operation you want to perform")
+task=input("enter operation between (add,sub,div,mul)")
+if task == 'add':
+    print(" the sum of numbers is :",a+b)
+if task == 'sub':
+    print("the subtraction of both numbers is :",a-b)
+if task == 'div':
+    print("'b' is divide b 'a':",b/a)
+if task == 'mul':
+    print("multiplication of a and b is:",a*b)
