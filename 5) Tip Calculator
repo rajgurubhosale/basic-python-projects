@@ -1,0 +1,15 @@
+print("what is bill:")
+bill=int(input())
+
+print("Number of People:")
+Number_of_people=int(input())
+
+print("enter TIP use number of percentage dont use symbols")
+tip=int(input())
+total_tip=tip/100
+
+
+
+total_bill=(bill+(total_tip*bill))
+each_person_bill=total_bill / Number_of_people
+print("each person should pay:",each_person_bill)
