@@ -59,7 +59,7 @@ def Game():
 
 
 
-
+#main game logic
 def main():
   print("enter Y to start the game ")
   print("enter x to stop the game")
