@@ -1,0 +1,56 @@
+# ROCK PAPER SCISSOR
+
+import random
+
+def instructions():
+
+  print("START GAME")
+  print("read instructions carefully")
+  print("ROCK wins against  SCISSORS | ")
+  print("PAPER wins against ROCK ")
+  print("SCISSORS wins against PAPER")
+  print("if both chose same it will tie")
+
+
+def startGame():  
+  print("type 'y' to start the game  or 'n' to stop : ")
+  start=input()
+  if start == 'y':
+    pass #start game or not logic here
+  if start == 'n':
+    pass
+  else:
+    type("type bet y or n")
+
+
+#we will take a player move from this dictionray for ouw ease
+Mdict={1:'rock',2:'paper',3:'scissors'}  
+
+#we created tuple for computer moves
+moves=('rock','paper','scissors')
+
+def Gamelogic():
+  print("enter your move")          #players move enter
+  playerMove=int(input())
+  print(Mdict[playerMove]) 
+
+  computerMove=random.choice(moves) #computer move random
+  print(computerMove)
+
+  if Mdict[playerMove] == computerMove:
+     print("its tie")
+  if Mdict[playerMove] == 'rock' and computerMove == 'paper':
+    print("computer wins")
+  if Mdict[playerMove] == 'rock' and computerMove == 'scissors':
+    print("player wins")
+  if Mdict[playerMove] ==  'paper' and computerMove =='rock':
+    print("player wins")
+  if Mdict[playerMove] ==  'paper' and computerMove =='scissors':
+    print("computer wins")
+  if Mdict[playerMove] ==  'scissors' and computerMove =='rock':
+    print("computer wins")
+  if Mdict[playerMove] ==  'scissors' and computerMove =='paper':
+    print("player wins")
+
+
+Gamelogic()
