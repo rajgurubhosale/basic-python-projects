@@ -14,19 +14,6 @@ def instructions():
   print("")
 
 
-
-"""
-def startGame():  
-
-  print("type 'y' to start the game  or 'n' to stop : ")
-  start=input()
-  if start == 'y':
-    print("game start")
-  if start=='n':
-    print("stop the game")
-"""
-
-
 #we will take a player move from this dictionray for ouw ease
 Mdict={1:'rock',2:'paper',3:'scissors'}  
 #we created tuple for computer moves
