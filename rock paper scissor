@@ -30,63 +30,60 @@ def startGame():
 #we will take a player move from this dictionray for ouw ease
 Mdict={1:'rock',2:'paper',3:'scissors'}  
 #we created tuple for computer moves
-moves=('rock','paper','scissors')
-
-
-
-def main():
-  instructions()
-  start=input("enter 'y' to start and 'x' to stop:")
-  if start=='x':
-    print("stop the game")
-  if start == 'y':
-    print("game start")
-    rounds=int(input("enter how many rounds you want to play:"))
+moves=('rock','paper','scissors')    
     
-    
+def Gamelogic():
     ComputerWins=0
     PlayerWins=0
     Ties=0
-    
+    print("game start")
+    rounds=int(input("enter how many rounds you want to play:"))
+
     for i in range(rounds):
-      print("enter your move")           #players move enter
-      playerMove=int(input())
-      print("players move:",Mdict[playerMove]) 
+        try:
+            print("enter your move")           #players move enter
+            playerMove=int(input())
+            print("players move:",Mdict[playerMove]) 
 
-      computerMove=random.choice(moves)     #computer move random
-      print("copmuters move:",computerMove)
+            computerMove=random.choice(moves)     #computer move random
+            print("copmuters move:",computerMove)
 
-      if Mdict[playerMove] == computerMove:
-         print("its tie")
-         Ties+=1
+            if Mdict[playerMove] == computerMove:
+                print("its tie")
+                Ties+=1
 
-      if Mdict[playerMove] == 'rock' and computerMove == 'paper':
-        print("computer wins")
-        ComputerWins+=1
+            if Mdict[playerMove] == 'rock' and computerMove == 'paper':
+                print("computer wins")
+                ComputerWins+=1
 
-      if Mdict[playerMove] == 'rock' and computerMove == 'scissors':
-        print("player wins")
-        PlayerWins+=1
+            if Mdict[playerMove] == 'rock' and computerMove == 'scissors':
+                print("player wins")
+                PlayerWins+=1
 
-      if Mdict[playerMove] ==  'paper' and computerMove =='rock':
-        print("player wins")
-        PlayerWins+=1
+            if Mdict[playerMove] ==  'paper' and computerMove =='rock':
+                print("player wins")
+                PlayerWins+=1
 
-      if Mdict[playerMove] ==  'paper' and computerMove =='scissors':
-        print("computer wins")
-        ComputerWins+=1
+            if Mdict[playerMove] ==  'paper' and computerMove =='scissors':
+                print("computer wins")
+                ComputerWins+=1
 
-      if Mdict[playerMove] ==  'scissors' and computerMove =='rock':
-        print("computer wins")
-        ComputerWins+=1
+            if Mdict[playerMove] ==  'scissors' and computerMove =='rock':
+                print("computer wins")
+                ComputerWins+=1
 
-      if Mdict[playerMove] ==  'scissors' and computerMove =='paper':
-        print("player wins")
-        PlayerWins+=1
+            if Mdict[playerMove] ==  'scissors' and computerMove =='paper':
+                print("player wins")
+                PlayerWins+=1
+        except KeyError:
+            print("enter number bet (1-3)")
+            
+
+    
     print("")
     print(" **total computer wins the game:-",ComputerWins)
     print(" **total  player wins the game:-",PlayerWins)
-    print("total",Ties,"times game tie ")
+    print(" **total times game tie:- ",Ties)
     print(" ")
     print(" ")
 
@@ -96,8 +93,34 @@ def main():
         print("*******player is the winner*******")
     else:
         print("game is tie")
+        
+        
+def Restart():
+    while True:
+        print("")
+        print("you want to play again")
+        playagain=input("enter 'y' to start and 'x' to stop:")
+        if playagain =='y':
+            Gamelogic()
+        else:
+            print("user dont want to play game again (quit)")
+            break
 
-
+            
+            
+def main():
+    instructions()
+    start=input("enter 'y' to start and 'x' to stop:")
+    if start=='x':
+        print("stop the game")
+    if start == 'y':
+        Gamelogic()
+        Restart()
+    
+    
+   
+    
+    
 
 main()
 
