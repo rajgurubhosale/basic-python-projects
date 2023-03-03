@@ -10,6 +10,7 @@ def instructions():
   print("PAPER wins against ROCK ")
   print("SCISSORS wins against PAPER")
   print("if both chose same it will tie")
+  print("player choices  options -1:'rock'  2:'paper' 3:'scissors' ")
   print("")
 
 
@@ -30,28 +31,45 @@ def startGame():
 Mdict={1:'rock',2:'paper',3:'scissors'}  
 #we created tuple for computer moves
 moves=('rock','paper','scissors')
+
+
+
+
+"""
+
 def Gamelogic():
   print("enter your move")           #players move enter
   playerMove=int(input())
-  print(Mdict[playerMove]) 
+  print("players move:",Mdict[playerMove]) 
 
   computerMove=random.choice(moves)     #computer move random
-  print(computerMove)
+  print("copmuters move:",computerMove)
 
   if Mdict[playerMove] == computerMove:
      print("its tie")
+     
   if Mdict[playerMove] == 'rock' and computerMove == 'paper':
     print("computer wins")
+    
   if Mdict[playerMove] == 'rock' and computerMove == 'scissors':
     print("player wins")
+   
+
   if Mdict[playerMove] ==  'paper' and computerMove =='rock':
     print("player wins")
+   
+  
   if Mdict[playerMove] ==  'paper' and computerMove =='scissors':
     print("computer wins")
+    
+
   if Mdict[playerMove] ==  'scissors' and computerMove =='rock':
     print("computer wins")
+  
+
   if Mdict[playerMove] ==  'scissors' and computerMove =='paper':
     print("player wins")
+    """
 
 
 
@@ -64,9 +82,57 @@ def main():
     print("stop the game")
   if start == 'y':
     print("game start")
-    rounds=int(input("enter how many rounds you want to play"))
+    rounds=int(input("enter how many rounds you want to play:"))
+    
+    ComputerWins=0
+    PlayerWins=0
+    Ties=0
     for i in range(rounds):
-      Gamelogic()
+      print("enter your move")           #players move enter
+      playerMove=int(input())
+      print("players move:",Mdict[playerMove]) 
+
+      computerMove=random.choice(moves)     #computer move random
+      print("copmuters move:",computerMove)
+
+      if Mdict[playerMove] == computerMove:
+         print("its tie")
+         Ties+=1
+         
+      if Mdict[playerMove] == 'rock' and computerMove == 'paper':
+        print("computer wins")
+        ComputerWins+=1
+        
+      if Mdict[playerMove] == 'rock' and computerMove == 'scissors':
+        print("player wins")
+        PlayerWins+=1
+        
+      if Mdict[playerMove] ==  'paper' and computerMove =='rock':
+        print("player wins")
+        PlayerWins+=1
+        
+      if Mdict[playerMove] ==  'paper' and computerMove =='scissors':
+        print("computer wins")
+        ComputerWins+=1
+    
+      if Mdict[playerMove] ==  'scissors' and computerMove =='rock':
+        print("computer wins")
+        ComputerWins+=1
+
+      if Mdict[playerMove] ==  'scissors' and computerMove =='paper':
+        print("player wins")
+        PlayerWins+=1
+    
+    print(" **total computer wins the game:-",ComputerWins)
+    print(" **total  player wins the game:-",PlayerWins)
+    
+    if computerWins > playerWins:
+        print("********computer is the winner*****")
+    elif computerWins < playerWins:
+        print("*******player is the winner*******")
+    else:
+        print("game is tie")
+
 
 main()
 
