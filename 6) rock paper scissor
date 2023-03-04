@@ -14,7 +14,7 @@ def instructions():
   print("")
 
 
-#we will take a player move from this dictionray for ouw ease
+#we will take a player move from this dictionray for
 Mdict={1:'rock',2:'paper',3:'scissors'}  
 #we created tuple for computer moves
 moves=('rock','paper','scissors')    
