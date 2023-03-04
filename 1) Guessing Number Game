@@ -1,8 +1,7 @@
 import random 
 
 def instructions():
-  print()
-  print("READ GAME INSTRUCTIONS")
+  print("\n READ GAME INSTRUCTIONS")
   print("Welcome to the guessing number game! ")
   print("let's see if you can crack the code and guess the correct number. Good luck!")
   print("GAMES RULES ARE :")
@@ -12,9 +11,7 @@ def instructions():
   print(" is 'WARMER' means that your guessed number is more close small number to secret number")
   print("COLDER means (vice versa)")
 
-  print("GAME START")
-  print("")
-
+  print("GAME START\n")
 
 def startGame():
   secretNumber= random.randint(1,101) #genrate a random secret Number
@@ -69,8 +66,7 @@ def main():
   if choice=='x':
     print("user dont want to play game")
   if choice != 'x' or 'y':
-    print("user entered wrong options")
-    print(" ")
+    print("user entered wrong options\n")
     main()
     
   
