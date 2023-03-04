@@ -10,9 +10,7 @@ def instructions():
   print("PAPER wins against ROCK ")
   print("SCISSORS wins against PAPER")
   print("if both chose same it will tie")
-  print("player choices  options -1:'rock'  2:'paper' 3:'scissors' ")
-  print("")
-
+  print("player choices  options -1:'rock'  2:'paper' 3:'scissors' \n")
 
 #we will take a player move from this dictionray for
 Mdict={1:'rock',2:'paper',3:'scissors'}  
