@@ -42,8 +42,7 @@ def playAgain():
     print("enter x to stop the game")
     choice = input( "enter 'y' or 'x' ")
     if choice == 'y':
-      print("| ")
-      print("welcome to the game again")
+      print(" \n welcome to the game again")
       Game()
     if choice == 'x':
       print("user dont want to play again stop the game!")
