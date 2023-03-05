@@ -1,0 +1,20 @@
+
+def fun():     #password checking function
+    while True:   
+        print("what is your password")
+        password=input()
+        if password.isdecimal()== False:
+            print("password should be a number")
+            continue
+        if password.isdecimal():
+            print("login succcessfully")
+            break
+#login system
+while True:
+    print("enter your user name:")
+    username=input()
+    if username.isalnum() == False:
+        print("enter a valid username")
+    if username.isalnum():
+        fun()
+        break
