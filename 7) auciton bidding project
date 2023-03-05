@@ -1,3 +1,4 @@
+
 print(" today's auction have started now ")
 print("                         ")
 print("         \*********/")
@@ -8,14 +9,42 @@ print("             \*/    ")
 print("              +    ")
 
 
-item=input("which item is on the bid now ?")
-print("so! now we are bidding for :",item,'!\n')
 
-print("there are any bidder who wants to bid\n")
-print("if 'yes' tell you name or 'no' if there is  no one")
-yes_or_no=input()
-if yes_or_no == 'yes':
-    bidder_name=input("\n what is your name")
-if yes_or_no == 'no':
-    print("there is no one who want to bid ")
-    pass
+
+
+
+def bid_again():
+    while True:
+        print("\nthere is anyone who wants bid more than that")
+        yes_or_no=input()
+        if yes_or_no == 'no':
+            print("there is no one,than",item,"goes to:",bidDict['bidder_name'],"for:  $",bidDict['bid'])
+            break
+        if yes_or_no == 'yes':
+            bidDict['bidder_name']=input("\n what is your name")  
+            bidDict['bid']=input("how much do you want to bid(yes or no)")
+            print(bidDict['bidder_name']+"\'s bid is:", bidDict['bid'])
+
+
+def main_auction():
+
+    item=input("which item is on the bid now ?")
+    print("so! now we are bidding for :",item,'!\n')
+    bidDict={'bidder_name':'bid'}
+    
+    
+    print("there are any bidder who wants to bid\n")
+    print("if 'yes' tell you name or 'no' if there is  no one")
+    yes_or_no=input()
+    if yes_or_no == 'no':
+        print("there is no one who want to,'bid this items go without selling' ")
+    if yes_or_no == 'yes':
+        bidDict['bidder_name']=input("\n what is your name")  
+        bidDict['bid']=input("how much do you want to bid")
+        print(bidDict['bidder_name']+"\'s bid is:", bidDict['bid'])
+        bid_again()
+
+        
+        
+main_auction()
+
