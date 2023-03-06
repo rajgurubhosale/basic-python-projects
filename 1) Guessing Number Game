@@ -1,6 +1,6 @@
 import random 
 
-def instructions():
+def instructions():                                                                       #instructions of game
   print("\n READ GAME INSTRUCTIONS")
   print("Welcome to the guessing number game! ")
   print("let's see if you can crack the code and guess the correct number. Good luck!")
