@@ -1,0 +1,3 @@
+a= float(input("types first number:"))
+b= float(input("types second number:"))
+print("the sum of both numbers:", a+b)

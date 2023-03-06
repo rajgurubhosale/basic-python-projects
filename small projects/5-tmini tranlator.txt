@@ -1,0 +1,11 @@
+def translate(phrase):
+    translation = ""
+    for letter in phrase:
+        if letter =="aeiou":
+            translation = translation +"g"
+        elif letter == "AEIOU":
+            translation = transaltion + "G"
+        else:
+            translation+letter
+    return translation
+print(translate(input("enter phrase:")))
