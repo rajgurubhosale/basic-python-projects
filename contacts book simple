@@ -1,0 +1,44 @@
+
+contacts={}
+def add_contact():
+    name=str(input("enter name"))
+    number=int(input("enter number"))
+    contacts[name]=number
+    
+def search_contact():
+    search=input("enter the name:")
+    print(contacts[search])
+
+def display_contacts():
+    for i in contacts.items():
+        print(i[0],":",i[1])
+        
+def delete_contact():
+    delete=input("enter name you want to delet contact")
+    del contacts[delete]
+
+
+
+def main():
+    print("welcome to contact dictionary")
+    print("enter choice")
+    print("1:add contact")
+    print("2:search contact")
+    print("3:display contacts")
+    print("4:delete contact")
+    print("5:exit")
+    
+    while True:
+        choice=int(input("enter your choice"))
+        if choice==1:
+            add_contact()
+        if choice==2:
+            search_contact()
+        if choice==3:
+            display_contacts()
+        if choice==4:
+            delete_contact()
+        if choice==5:
+            print("thanks for  using my dictionary")
+            break
+main()
