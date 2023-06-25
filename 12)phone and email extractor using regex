@@ -1,0 +1,33 @@
+import re
+
+
+phoneRegex=re.compile(r'\d\d\d-\d\d\d-\d\d\d\d')
+
+phoneNumbers=phoneRegex.findall('''
+Copied to clipboard:
+800-420-7240
+415-863-9900
+415-863-9950
+info@nostarch.com
+media@nostarch.com
+academic@nostarch.com
+help@nostarch.com''')
+print(phoneNumbers)
+
+
+emailRegex=re.compile(r'[a-zA-Z0-9._%-]+.@+[a-zA-Z0-9]+.[a-zA-Z]{2,4}',re.I)
+
+emailAdresses=emailRegex.findall('''
+800-420-7240
+415-863-9900
+415-863-9950
+raj@gmail.com
+raj%-_$@nostarch.com
+info@nostarch.com
+media@nostarch.com
+academic@nostarch.com
+help@nostarch.com
+''')
+print(emailAdresses)
+
+
