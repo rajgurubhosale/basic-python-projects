@@ -1,0 +1,66 @@
+import random
+
+words=["pizza","calender","mobile","laptop","memory","friends","school","college","movie","theatre","cricket","realtionship",
+       "years","reserch","capital","country","tower","advance","beautiful","ugly","article","wonder","marathon","leader"]
+
+
+secretWord=random.choice(words) #select random word from list
+difficulty=int(input("enter 1-easy , 2-medium , 3-hard (1-2-3): "))
+
+#check diffficulty
+
+if difficulty==1:
+    lives=11
+if difficulty==2:
+    lives=9
+if difficulty==3:
+    lives=7
+
+#list of letters
+secretWord_letters=[]
+secretWord_letters.extend(secretWord)
+
+unknown_list=list("?"*len(secretWord_letters))
+
+heart_symbol= u'\u2764'
+
+while True:
+    print(unknown_list)
+    print(heart_symbol*lives)
+
+    guess=input("enter letter or whole word: ")
+
+    #for whole word guessing
+    if len(guess) > 1 and len(guess) > len(secretWord):
+        lives-=1
+        continue
+
+    if len(guess) > 1 and len(guess) < len(secretWord):
+        lives-=1
+        continue
+
+    if len(guess)==len(secretWord):
+        if guess==secretWord:
+            print("** you are winner ** ")
+            break
+        else:
+            lives-=1
+            continue
+
+    #for letter guessing
+    if len(guess)==1:
+        if guess in secretWord_letters:
+            idx=secretWord_letters.index(guess)
+            unknown_list.insert(idx,guess)
+        else:
+            lives-=1
+
+    if unknown_list==secretWord_letters:
+        print("** you are the winner **")
+        pritn(f"the secret word is:{secretWord}")
+        print(f"remaning lives:{lives}")
+        break
+    if lives==0:
+        print("**you lose ")
+        print(f"the secret word was: {secretWord}")
+        break
