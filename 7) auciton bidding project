@@ -1,53 +1,48 @@
-                                                   #start the auction
-
-print(" today's auction have started now ")
-print("                         ")
-print("         \*********/")
-print("          \*******/  ")
-print("           \*****/   ")
-print("            \***/    ")
-print("             \*/    ")
-print("              +    ")
+def start():
+    print("*** auction is started ***")
+    print("         *******          ")
+    print("           ***            ")
+    print("            *             ")
 
 
+bidders={ }#dict to save bidders name
 
 
-  
- 
-def bid_again():                  #this function is created to bid again
-    while True:                    #whilw loop for getting names and bid again 
-        print("\nthere is anyone who wants bid more than that")
-        yes_or_no=input()
-        if yes_or_no == 'no':                #if there is no onw who wants bid 
-            print("there is no one,than",item,"goes to:",bidDict['bidder_name'],"for:  $",bidDict['bid']) #it will return winner of item
+def startAuction():
+    item=input("enter item for auction: ")
+    anyoneOneForPurchase=input("there is anyone who wants to bid for for this item(y or n): ")
+    if anyoneOneForPurchase=="n" or anyoneOneForPurchase=="N":
+        print("** items goes unsold ** ")
+    if anyoneOneForPurchase=="y" or anyoneOneForPurchase=="Y":
+        while True:
+            name=input("enter name: ")
+            bid=input("enter your bid amount: ")
+            lastBiderName=name  #varible for saving last bidders name
+            bidders[name]=bid
+            while True:
+                againBid=input("is there anyone who want to bid more (y or n): ")
+                if againBid=="n" or againBid=="N":
+                    print(f"items goes to:- {name} for :- {bid}")
+                    break
+                if againBid=="y" or againBid=="Y":
+                    name = input("enter name: ")
+                    bid = input("enter your bid amount: ")
+                    #for repetated bid amount should be more
+                    while True:
+                        if bid < bidders[lastBiderName]:
+                            print(f"enter amount more than:{bidders[lastBiderName]}")
+                            bid=input("enter your bid")
+                        else:
+                            break
+                    bidders[name] = bid
+                    lastBiderName=name # varible for saving last bider name
+                    continue
             break
-        if yes_or_no == 'yes':
-            bidDict['bidder_name']=input("\n what is your name")          #otherwise loop will be continuely running
-            bidDict['bid']=input("how much do you want to bid(yes or no)")
-            print(bidDict['bidder_name']+"\'s bid is:", bidDict['bid'])
 
 
-def main_auction():
-#main auction will start here
-    item=input("which item is on the bid now ?")       #which itms is on auction for now
-    print("so! now we are bidding for :",item,'!\n')
-    bidDict={'bidder_name':'bid'}                         #we created dictionary to save bidders name and ther bid 
-    
-    
-    print("there are any bidder who wants to bid\n")                      #asking there is anyone who wants to bid
-    print("if 'yes' tell you name or 'no' if there is  no one")
-    yes_or_no=input()
-    if yes_or_no == 'no':
-        print("there is no one who want to,'bid this items go without selling' ")   #if user press no then this statement will
-                                                                                      # print and whole auction will stop
-    
-    if yes_or_no == 'yes':                                      #if user says yes 
-        bidDict['bidder_name']=input("\n what is your name")     #take the bidders name save in dictionary
-        bidDict['bid']=input("how much do you want to bid")       #take input how much bidders wants to bid and save to dict
-        print(bidDict['bidder_name']+"\'s bid is:", bidDict['bid']) #print  bideers name and there  bid form dictonary
-        bid_again()                                                  #FUNCITON
+def main():
+    start()
+    startAuction()
 
-        
-        
-main_auction()
 
+main()
