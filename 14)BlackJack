@@ -1,0 +1,99 @@
+import random
+######################## COONSTANT #############################
+ace=11
+J=10
+Q=10
+K=10
+cards=[ace,2,3,4,5,6,7,8,9,10,J,Q,K]
+playerCards=[]
+computerCards=[]
+#################################################################
+
+def checkWinner():
+    global playerScore,computerScore,flag
+    flag=True
+    if playerScore > 21 and computerScore <= 21:
+        print("** The Computer is the Winner ** ")
+        print(f"Player Score :{playerScore}")
+        print(f"Computer Score:{computerScore}")
+        flag=False
+
+
+    if playerScore <= 21 and computerScore > 21:
+        print("** The Player is the Winner **")
+        print(f"Player Score:{playerScore}")
+        print(f"Computer Score :{computerScore}")
+        flag=False
+
+
+    if (playerScore > computerScore) and (playerScore <= 21):
+        print(f"** The Player is the Winner **")
+        print(f"Player Score:{playerScore}")
+        print(f"Copmuter Score:{computerScore}")
+        flag=False
+
+
+    if (playerScore < computerScore) and (computerScore <= 21):
+        print(f"** The Computer is the Winner **")
+        print(f"Player Score:{playerScore}")
+        print(f"Copmuter Score:{computerScore}")
+        flag=False
+
+
+    if computerScore == playerScore:
+        print("Game Is Draw")
+        print(f"Player Score:{playerScore}")
+        print(f"Computer Score:{computerScore}")
+        flag=False
+
+
+
+def main():
+    global playerScore,computerScore,flag
+
+    startGame=input("enter  'y' to start or 'n' to stop: ")
+    if startGame=="n" or startGame=="N":
+        print("User don't want to play game! Good Day")
+    if startGame=="y" or startGame=="Y":
+
+        #begining of the game getting first two cards
+
+        playerCards.append(random.choice(cards))
+        playerCards.append(random.choice(cards))
+        computerCards.append(random.choice(cards))
+        secondCardOfComputer = random.choice(cards)
+        print(playerCards)
+        print(computerCards)
+
+        while True:
+            anotherCardchoice=input("\n Enter 'y' for Another Card or 'n' to Stand: ")
+            if anotherCardchoice=="n" or anotherCardchoice=="N":
+                playerScore = sum(playerCards)
+                computerScore = secondCardOfComputer + sum(computerCards)
+                checkWinner()
+                if flag==False:
+                    print(f"Hidden Card:{secondCardOfComputer}")
+                    break
+
+
+            if anotherCardchoice == "y" or anotherCardchoice == "Y":
+                playerCards.append(random.choice(cards))
+                computerCards.append(random.choice(cards))
+                print(playerCards)
+                print(computerCards)
+                playerScore=sum(playerCards)
+                computerScore=secondCardOfComputer+sum(computerCards)
+                checkWinner()
+                if flag==False:
+                    print(f"Hidden Card:{secondCardOfComputer}")
+                    break
+
+                if flag==True:
+                    continue
+
+
+
+
+
+if __name__ == '__main__':
+    main()
