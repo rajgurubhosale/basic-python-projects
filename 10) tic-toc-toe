@@ -15,7 +15,7 @@ def start():
         print(f"user turn {user}:")
         move=int(input("enter (1-9): "))
 
-        if gameboard[move]=="x" or gameboard[move]=="y":  # check if this move already played
+        if gameboard[move]=="x" or gameboard[move]=="o":  # check if this move already played
             continue
 
         if move <= 9: #move should be in(1-9)
@@ -25,42 +25,42 @@ def start():
             print("enter number bet(1-9)")
 
         if user=="x":
-            user="y"
+            user="o"
         else:
             user="x"
 
         count+=1   #counting moves
 
         #winning
-        if (gameboard[1] == gameboard[2] and gameboard[1] == gameboard[3]) and (gameboard[1]=="x" or gameboard[1]=="y"):
+        if (gameboard[1] == gameboard[2] and gameboard[1] == gameboard[3]) and (gameboard[1]=="x" or gameboard[1]=="o"):
             print(f"** the winner is: {gameboard[1]} **")
             break
 
-        if ( gameboard[4]==gameboard[5] and gameboard[4] == gameboard[6] ) and (gameboard[4]=="x" or gameboard[4]=="y") :
+        if ( gameboard[4]==gameboard[5] and gameboard[4] == gameboard[6] ) and (gameboard[4]=="x" or gameboard[4]=="o") :
             print(f"** the winner is: {gameboard[4]} **")
             break
 
-        if (gameboard[7]==gameboard[8] and gameboard[7] == gameboard[9])  and (gameboard[7]=="x" or gameboard[7]=="y"):
+        if (gameboard[7]==gameboard[8] and gameboard[7] == gameboard[9])  and (gameboard[7]=="x" or gameboard[7]=="o"):
             print(f"** the winner is: {gameboard[7]} **")
             break
 
-        if (gameboard[1]==gameboard[5] and gameboard[1] == gameboard[9]) and (gameboard[1]=="x" or gameboard[1]=="y"):
+        if (gameboard[1]==gameboard[5] and gameboard[1] == gameboard[9]) and (gameboard[1]=="x" or gameboard[1]=="o"):
             print(f"** the winner is: {gameboard[9]} **")
             break
 
-        if (gameboard[3]==gameboard[5] and gameboard[3] == gameboard[7]) and (gameboard[3]=="x" or gameboard[3]=="y"):
+        if (gameboard[3]==gameboard[5] and gameboard[3] == gameboard[7]) and (gameboard[3]=="x" or gameboard[3]=="o"):
             print(f"** the winner is: {gameboard[9]} **")
             break
 
-        if (gameboard[1]==gameboard[4] and gameboard[1] == gameboard[7]) and (gameboard[1]=="x" or gameboard[1]=="y"):
+        if (gameboard[1]==gameboard[4] and gameboard[1] == gameboard[7]) and (gameboard[1]=="x" or gameboard[1]=="o"):
             print(f"** the winner is: {gameboard[1]} **")
             break
 
-        if (gameboard[2] == gameboard[5] and gameboard[2] == gameboard[8]) and (gameboard[2]=="x" or gameboard[2]=="y"):
+        if (gameboard[2] == gameboard[5] and gameboard[2] == gameboard[8]) and (gameboard[2]=="x" or gameboard[2]=="o"):
             print(f"** the winner is: {gameboard[2]} **")
             break
 
-        if (gameboard[3] == gameboard[6] and gameboard[3] == gameboard[9]) and (gameboard[3]=="x"or gameboard[3]=="y"):
+        if (gameboard[3] == gameboard[6] and gameboard[3] == gameboard[9]) and (gameboard[3]=="x"or gameboard[3]=="o"):
             print(f"** the winner is: {gameboard[3]} **")
             break
 
